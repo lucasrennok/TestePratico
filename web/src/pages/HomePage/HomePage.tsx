@@ -8,7 +8,7 @@ import api from '../../services/api';
 // Home dos comentários
 function HomePage(){
     const [textoDoComentario, setTextoDoComentario] = useState('');
-    const [comentariosExistentes, setComentariosExistentes] = useState([<></>]);
+    const [comentariosExistentes, setComentariosExistentes] = useState([]);
 
     function cadastrarComentario(){
         // Realizar cadastro
@@ -34,9 +34,9 @@ function HomePage(){
 
                     comentariosData.comentarios.forEach((comentario: any) => {
                         const texto = comentario.texto
-                        novosComentariosExistentes.push(<Comment texto={texto}></Comment>)
+                        novosComentariosExistentes.push(<Comment texto={texto} key={novosComentariosExistentes.length}></Comment>)
                     });
-                    
+
                     setComentariosExistentes(novosComentariosExistentes);
                 }
             })
