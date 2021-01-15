@@ -1,0 +1,12 @@
+.comentarios{
+    width: 30rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.comentarios h3{
+    width: 30rem;
+}
