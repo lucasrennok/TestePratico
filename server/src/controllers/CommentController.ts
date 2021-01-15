@@ -6,7 +6,7 @@ export default class CommentController{
     async getAllComments(request: Request, response: Response){
         const {} = request.query;
 
-        const selectedCategories = await db("comentario").select('texto');
+        const selectedCategories = await db("comentario").select('texto').orderBy('created_at', 'desc');
 
         return response.status(200).json({"comentarios": selectedCategories});
     }
