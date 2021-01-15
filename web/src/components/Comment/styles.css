@@ -1,5 +1,5 @@
 .comentarios{
-    width: 30rem;
+    width: 35rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,4 +9,7 @@
 
 .comentarios h3{
     width: 30rem;
+}
+.comentarios button{
+    margin-left: 5rem;
 }

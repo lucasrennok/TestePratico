@@ -36,7 +36,7 @@
       max-height: 100vh;
   }
 
-  @media(min-width: 700px){
+  @media(min-width: 1000px){
       :root{
           font-size: 72.5%;
       }

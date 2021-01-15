@@ -17,7 +17,7 @@ function HomePage(){
         <div id="home-page">
             <div className="container-areatext">
                 <h1>Comentário</h1>
-                <TextareaAutosize id="comentario" rowsMin={8} placeholder="Digite seu comentário aqui" onChange={(e: any)=>setTextoDoComentario(e.target.value)} />
+                <TextareaAutosize id="comentario" rowsMin={15} placeholder="Digite seu comentário aqui" onChange={(e: any)=>setTextoDoComentario(e.target.value)} />
                 <button onClick={()=>cadastrarComentario()}>Cadastrar</button>
             </div>
 
@@ -26,6 +26,10 @@ function HomePage(){
                 <Comment texto="teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste"></Comment>
                 <Comment texto="Texto para ler"></Comment>
                 <Comment texto="Ouvir texto"></Comment>
+                <Comment texto="Texto para ler. Teste 1,2,3"></Comment>
+                <Comment texto="Texto para ler. Teste 1,2,3"></Comment>
+                <Comment texto="Texto para ler. Teste 1,2,3"></Comment>
+                <Comment texto="Texto para ler. Teste 1,2,3"></Comment>
                 <Comment texto="Texto para ler. Teste 1,2,3"></Comment>
             </div>
         </div>

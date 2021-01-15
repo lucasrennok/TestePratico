@@ -2,19 +2,22 @@
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #comentario{
     min-width: 40rem;
+    outline: none;
+    overflow: hidden;
+    padding: 0.3rem;
 }
 
 .container-areatext, .container-comentarios{
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 1.2rem;
 }
 
 .container-areatext h1, .container-comentarios h1{
@@ -49,4 +52,17 @@ button:hover:not(:active){
 
 button:active{
     opacity: 50%;
+}
+
+
+@media(min-width: 1000px){
+    #home-page {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .container-areatext, .container-comentarios{
+        margin: 5rem;
+    }
 }
