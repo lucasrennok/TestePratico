@@ -34,7 +34,7 @@ function HomePage(){
 
                     comentariosData.comentarios.forEach((comentario: any) => {
                         const texto = comentario.texto
-                        novosComentariosExistentes.push(<Comment texto={texto} key={novosComentariosExistentes.length}></Comment>)
+                        novosComentariosExistentes.push(<Comment texto={texto} id={'comment-'+novosComentariosExistentes.length} key={novosComentariosExistentes.length}></Comment>)
                     });
 
                     setComentariosExistentes(novosComentariosExistentes);
