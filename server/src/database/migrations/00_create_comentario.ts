@@ -4,7 +4,7 @@ import Knex from 'knex';
 export async function up(knex: Knex){
     return knex.schema.createTable('comentario', table => {
         table.increments();
-        table.string('texto');
+        table.text('texto', 'longtext');
         table.timestamp('created_at').defaultTo(knex.fn.now());;
     });
 }
