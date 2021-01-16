@@ -34,7 +34,7 @@ Assim serão executadas as migrações para o banco de dados MySql.
 
 * **Web**
 
-Entre na pasta 'web' e altere 'YOUR_API_BASE_URL_HERE' e 'YOUR_API_KEY_HERE' para a URL e a ApiKey recebidas da API Text to Speech do IBM Watson.
+Entre na pasta 'web' no arquivo '.env.example' e altere 'YOUR_API_BASE_URL_HERE' e 'YOUR_API_KEY_HERE' para a URL e a ApiKey recebidas da API Text to Speech do IBM Watson respectivamente. Após ser feito isso, renomeie o nome o arquivo '.env.example' para '.env'.
 
 ### - Execução
 
