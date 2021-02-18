@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useState } from 'react';
+import api from '../../services/api';
 import './styles.css';
 
 interface CommentProps{
@@ -12,23 +12,27 @@ const Comment: React.FC<CommentProps> = (props) => {
 
     // IBM Watson Text to Speech
     function ouvirComentario(){
-        const baseURL = process.env.REACT_APP_API_BASE_URL
-        const apiKey = process.env.REACT_APP_API_KEY
 
         // Cria a tag de audio com o source da API
         if(audio.type==='div'){
-            axios.get(baseURL+'/v1/synthesize?accept=audio%2Fogg&text='+encodeURIComponent(props.texto)+'&voice=pt-BR_IsabelaVoice', {
-                auth: {
-                    username: 'apikey',
-                    password: apiKey || ''
+            api('/get/comment/audio', {
+                method: 'POST',
+                responseType: 'blob',
+                data: {
+                    "texto": props.texto
+                },
+                headers: {
+                    'Content-Type': 'application/json',
                 }
-            }).then(() => {
-                    setAudio(
-                        <audio controls autoPlay hidden id={props.id}>
-                            <source src={baseURL+'/v1/synthesize?accept=audio%2Fogg&text='+encodeURIComponent(props.texto)+'&voice=pt-BR_IsabelaVoice'} type="audio/ogg"></source>
-                        </audio>
-                    )
-                });
+            }).then((response) => {
+                const srcToSetAudio = URL.createObjectURL(response.data)
+                console.log()
+                setAudio(
+                    <audio controls autoPlay hidden id={props.id}>
+                        <source src={srcToSetAudio} type="audio/ogg"></source>
+                    </audio>
+                )
+            });
         }else{
             //Caso já exista o source do áudio, o áudio é tocado
             let e = document.getElementById(props.id);
